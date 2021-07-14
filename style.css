@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(220, 220, 220);
+}
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    background-color: aqua;
+}
+.timeline {
+    width: 80%;
+    height: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+.timeline ul {
+    list-style: none;
+}
+.timeline ul li {
+    padding: 24px;
+    background-color:chartreuse;
+    color: black;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.timeline ul li:last-child {
+    margin-bottom: 0;
+}
+.timeline-content h1 {
+    font-size: 24px;
+    color: orangered;
+}
+.timeline-content p {
+    font-size: 16px;
+}
+@media only screen and (min-width : 700px){
+    .timeline::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: honeydew;
+    }
+    .timeline ul li {
+        width: 50%;
+        margin-bottom: 50px;
+        position: relative;
+    }
+    .timeline ul li:nth-child(odd) {
+        float: left;
+        clear: right;
+        transform: translateX(-20px);
+        border-radius: 20px 0 20px 20px;
+    }
+    .timeline ul li:nth-child(even) {
+        float: right;
+        clear: left;
+        transform: translateX(20px);
+        border-radius: 0px 20px 20px 20px;
+    }
+    .timeline ul li::after {
+        content: '';
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background-color: lavender;
+        border-radius: 50%;
+        top: 0;
+    }
+    .timeline ul li:nth-child(odd)::after {
+        transform: translate(50% , -50%);
+        right: -20px;
+    }
+    .timeline ul li:nth-child(even)::after {
+        transform: translate(-50% , -50%);
+        left: -20px;
+    }
+    .timeline ul li:hover:after{
+        background-color: red;
+    }
+}
